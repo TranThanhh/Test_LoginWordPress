@@ -4,21 +4,54 @@ namespace Page;
 class Login
 {
     // include url of current page
-    public static $URL = '/log-in/fr?redirect_to=https%3A%2F%2Fwordpress.com%2F';
-    public  static  $usernamefield='//*[@id="usernameOrEmail"]';
-    public  static  $passwordField='//*[@id="password"]';
-    public static  $continueButton='//*[@id="primary"]/div/main/div[2]/div[1]/div/form/div[1]/div[2]/button';
-    public  static  $loginButton='//*[@id="primary"]/div/main/div[2]/div[1]/div/form/div[1]/div[2]/button';
-
+    /**
+     * @var string
+     */
+    public static $URL = '/log-in?redirect_to=https%3A%2F%2Fwordpress.com%2F';
+    /**
+     * @var string
+     */
+    public  static  $usernamefield='//input[@id="usernameOrEmail"]';
+    /**
+     * @var string
+     */
+    public  static  $passwordField='//input[@id="password"]';
+    /**
+     * @var string
+     */
+    public static  $continueButton='Continue';
+    /**
+     * @var string
+     */
+    public  static  $loginButton='Log In';
+    /**
+     * @var string
+     */
     public  static $cotinuewithGGButton='Continue with Google';
-    public  static $creatnewAccHyperLink='//*[@id="primary"]/div/main/div/div[2]/a[1]';
-
-    public  static $EmailaLinkHyperLink='//*[@id="primary"]/div/main/div[2]/div[2]/a[2]';
-    public  static $lostPassHyperLink='//*[@id="primary"]/div/main/div/div[2]/a[3]';
-    public  static $backWordpressHyperLink='//*[@id="primary"]/div/main/div/div[2]/a[4]';
-    public  static $temsHyperLink='//*[@id="primary"]/div/main/div/div[1]/div/form/div[1]/p/a';
-    public  static $changeEmailHyperLink='//*[@id="primary"]/div/main/div[2]/div[1]/div/form/div[1]/div[1]/label/a';
-
+    /**
+     * @var string
+     */
+    public  static $creatnewAccHyperLink='//div[@class="wp-login__links"]/a';
+    /**
+     * @var string
+     */
+    public  static $emailaLinkHyperLink='//div[@class="wp-login__links"]/a[2]';
+    /**
+     * @var string
+     */
+    public  static $lostPassHyperLink='//div[@class="wp-login__links"]/a[3]';
+    /**
+     * @var string
+     */
+    public  static $backWordpressHyperLink='//div[@class="wp-login__links"]/a[4]';
+    /**
+     * @var string
+     */
+    public  static $temsHyperLink='//p[@class="login__form-terms"]/a';
+    /**
+     * @var string
+     */
+    public  static $changeEmailHyperLink='//div[@class="login__form-userdata"]/label/a';
 
     /**
      * Declare UI map for this page here. CSS or XPath allowed.

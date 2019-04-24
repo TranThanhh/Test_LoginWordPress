@@ -1,20 +1,26 @@
 <?php
 
 
-use Step\Acceptance\Admin1 as ThanhTest;
+use Step\Acceptance\Admin1 as SecondStep;
 
 class LI_03Cest
 {
+    /**
+     * @param AcceptanceTester $I
+     */
     public function _before(AcceptanceTester $I)
     {
     }
 
-    // tests
-    public function tryToTest(ThanhTest $I, $scenario)
+    /**
+     * @param SecondStep $I
+     * @param $scenario
+     * Verify user not able to login with Email address Invalid
+     */
+    public function loginUnsucceed(SecondStep $I, $scenario)
     {
-        $I = new ThanhTest($scenario);
+        $I = new SecondStep($scenario);
         $I->loginUsername('tranthithanhgmail.com');
-        $I->wait(2);
-        $I->see('User does not exist.');
+        $I->waitForText('User does not exist.',2);
     }
 }

@@ -1,17 +1,24 @@
 <?php
-use Step\Acceptance\Admin as ThanhTest;
+use Step\Acceptance\Admin as FirstStep;
 
 class LI_02Cest
 {
+    /**
+     * @param AcceptanceTester $I
+     */
     public function _before(AcceptanceTester $I)
     {
     }
 
-    // tests
-    public function tryToTest(ThanhTest $I, $scenario)
+    /**
+     * @param FirstStep $I
+     * @param $scenario
+     * Check login unsucceed with Email address valid, Password invalid
+     */
+    public function loginUnsucceed(FirstStep $I, $scenario)
     {
-        $I = new ThanhTest($scenario);
+        $I = new FirstStep($scenario);
         $I->loginAsAdmin('tranthithanh200497@gmail.com', 'abc');
-        //$I->see('');
+        $I->see('Oops, that\'s not the right password. Please try again!');
     }
 }

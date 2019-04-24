@@ -1,20 +1,28 @@
 <?php
 
 
-use Step\Acceptance\Admin1 as ThanhTest;
+use Step\Acceptance\Admin as AdminTester;
+use Step\Acceptance\Admin as FirstStep;
 
 class LI_32Cest
 {
+    /**
+     * @param AcceptanceTester $I
+     */
     public function _before(AcceptanceTester $I)
     {
+
     }
 
-    // tests
-    public function tryToTest(ThanhTest $I, $scenario)
+    /**
+     * @param AdminTester $I
+     * @param $scenario
+     * Check login succeed with Email address valid, Password valid
+     */
+    public function loginSuccess(FirstStep $I, $scenario)
     {
-        $I = new ThanhTest($scenario);
-        $I->loginUsername('admin');
-        $I->wait(2);
-        //$I->see('User does not exist.');
+        $I = new FirstStep($scenario);
+        $I->loginAsAdmin('tranthithanh200497@gmail.com','conyeugiadinh136204');
+        $I->see('Welcome to Reader');
     }
 }

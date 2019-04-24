@@ -12,7 +12,6 @@ class Admin1 extends \AcceptanceTester
         $I->amOnPage(LoginPage::$URL);
         $I->fillField(LoginPage::$usernamefield,$name);
         $I->click(LoginPage::$continueButton);
-        $I->wait(2);
     }
 
 }

@@ -1,19 +1,24 @@
 <?php
 
-
-use Page\Login as LoginPage;
+use Step\Acceptance\Admin as Step;
 
 class LI_18Cest
 {
+    /**
+     * @param AcceptanceTester $I
+     */
     public function _before(AcceptanceTester $I)
     {
     }
 
-    // tests
-    public function tryToTest(AcceptanceTester $I)
+    /**
+     * @param AcceptanceTester $I
+     * @param $scenario
+     * Verify if  [Tems of Service] HyperLink work
+     */
+    public function clickHyperLink(AcceptanceTester $I, $scenario)
     {
-        $I->amOnPage('/log-in?redirect_to=https%3A%2F%2Fwordpress.com%2F');
-        $I->click(LoginPage::$temsHyperLink);
-        $I->wait(2);
+        $I = new Step($scenario);
+        $I->clickTemsHyperLink();
     }
 }

@@ -1,25 +1,30 @@
 <?php
 
 
-use Step\Acceptance\Admin1 as ThanhTest;
+use Step\Acceptance\Admin1 as SecondStep;
 
 class LI_10Cest
 {
+    /**
+     * @param AcceptanceTester $I
+     */
     public function _before(AcceptanceTester $I)
-{
-}
-
-    // tests
-    public function tryToTest(ThanhTest $I, $scenario)
     {
-        $I = new ThanhTest($scenario);
-        $I->loginUsername(null);
-        $I->wait(2);
+    }
 
+    /**
+     * @param SecondStep $I
+     * @param $scenario
+     * Verify user not able to login with Email address null, click multitime on Continue button show same error
+     */
+    public function loginUnsucceed(SecondStep $I, $scenario)
+    {
+        $I = new SecondStep($scenario);
         $I->loginUsername(null);
-        $I->wait(2);
+        $I->see('Please enter a username or email address.');
         $I->loginUsername(null);
-        $I->wait(2);
-        // $I->see('User does not exist.');
+        $I->see('Please enter a username or email address.');
+        $I->loginUsername(null);
+        $I->see('Please enter a username or email address.');
     }
 }
